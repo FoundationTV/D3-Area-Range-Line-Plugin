@@ -37,5 +37,5 @@ var retdata = [
                 }
             ];     
 ```
-Inline-style: 
+
 ![alt text](https://github.com/JunctionTV/D3-Area-Range-Line-Plugin/blob/master/images/area-rangeline-date.png "Area Range line chart")
