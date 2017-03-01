@@ -12,7 +12,7 @@
         <script>
             var container = "errorchart";
             /*
-             * Preparing json data
+             * Preparing json data containing X-axis as Date
              * Number of keys in json draw no. of lines and area(Here we provide 2 keys)
              */
             var retdata = [
@@ -50,23 +50,24 @@
             //Providing chart options
             var options = {
                 axes : {
-                    xLabel : "Date", // X Label text
+                    xLabel : "Date", // X Label Text
                     yLabel : "Count", // Y Label Text
-                    yAxisLabelPos : "outer", //inner or blank will set the Y axis label position in inner side, (e.g. inner or outer)
-                    xScale : "datetime" //For date time in X axis, provide 'datetime' (e.g. datetime, str)
+                    yAxisLabelPos : "outer", //'inner' will set the Y-axis label position in inner side, (e.g. inner or outer)
+                    xScale : "datetime" //For date time in X-axis, provide 'datetime' (e.g. datetime, str)
                 },
                 lineOpt : {
                     strokeWidth : 1,
                     areaOpacity : 0.5,
-                    interpolate : "cardinal" //Different shape of the line and area(i.e linear, cardinal, monotone etc)
+                    interpolate : "cardinal" // Different shape of the line and area(i.e linear, cardinal, monotone etc.)
                 },
                 legend : {
-                    enable : true
+                    enable : true,
+                    legendType : 'circle' // Different shape of the legends(i.e. circle, rectangle)
                 },
                 background : {
                     bgColor : "#FFF",
                     gridlineWidth : 0.1,
-                    noOfTicks : 10
+                    noofGrids : 10
                 }
             };
 
