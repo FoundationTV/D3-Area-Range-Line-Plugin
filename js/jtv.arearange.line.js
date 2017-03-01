@@ -23,7 +23,7 @@
                 axes : {
                     xLabel : "Date",
                     yLabel : "Count",
-                    yAxisLabelPos : "outer",//inner or balank will set the Y axis label position in inner side,
+                    yAxisLabelPos : "outer",//inner will set the Y axis label position in inner side,
                     xScale : "datetime1" //For date time in X axis, provide 'datetime'
                 },
                 lineOpt : {
