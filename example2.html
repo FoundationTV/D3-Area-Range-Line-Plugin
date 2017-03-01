@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JTV Area Range Line chart in d3</title>
+        <meta charset="utf-8">
+        <link href="css/jtv.arearange.line.css" rel="stylesheet">
+        <script src="//d3js.org/d3.v3.min.js"></script>
+        <script src="js/jtv.arearange.line.js"></script>
+    </head>
+    <body>
+        <div id="errorchart" style="width: 1500px; height: 500px;"></div>
+        <script>
+            var container = "errorchart";
+            /*
+             * Preparing json data
+             * Number of keys in json draw no. of lines and area(Here we provide 2 keys)
+             */            
+            var retdata = [
+                {
+                    key: "Registered",
+                    values : [
+                       {"date": "Week1","low": 3,"high": 5, "avg": 4},
+                       {"date": "Week2","low": 1,"high": 3,"avg": 2},
+                       {"date": "Week3","low": 4,"high": 6,"avg": 5},
+                       {"date": "Week4","low": 6,"high": 8,"avg": 7},
+                       {"date": "Week5","low": 5,"high": 7,"avg": 6}
+                    ]
+                },
+                {
+                    key: "Subscribed",
+                    values : [
+                       {"date": "Week1","low": 6,"high": 9, "avg": 7},
+                       {"date": "Week2","low": 3,"high": 5,"avg": 4},
+                       {"date": "Week3","low": 5,"high": 7,"avg": 6},
+                       {"date": "Week4","low": 2,"high": 4,"avg": 3},
+                       {"date": "Week5","low": 6,"high": 8,"avg": 7}
+                    ]
+                },
+             ];
+            
+            //Providing chart options
+            var options = {
+                axes : {
+                    xLabel : "Date", // X Label text
+                    yLabel : "Count", // Y Label Text
+                    yAxisLabelPos : "outer", //inner or blank will set the Y axis label position in inner side, (e.g. inner or outer)
+                    xScale : "str" //For date time in X axis, provide 'datetime' (e.g. datetime, str)
+                },
+                lineOpt : {
+                    strokeWidth : 1,
+                    areaOpacity : 0.5,
+                    interpolate : "cardinal" //Different shape of the line and area(i.e linear, cardinal, monotone etc)
+                },
+                legend : {
+                    enable : true
+                },
+                background : {
+                    bgColor : "#FFF",
+                    gridlineWidth : 0.1,
+                    noOfTicks : 10
+                }
+            };
+
+            jtvd3.component.drawLineChart(container, retdata, options); 
+            
+        </script>
+    </body>
+</html>
